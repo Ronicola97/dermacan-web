@@ -7,7 +7,7 @@ $email = $_GET['email'];
 $pass = $_GET['contrasenia'];
 $arreglo = array();
 
-$sql = "select * from cliente where email='".$usu."' and contrasenia='".$pass."';
+$sql = "select * from usuarios where usu_mail='".$email."' and usu_contrasenia='".$pass."';
 
 
 $respuesta = $db->query($sql);
