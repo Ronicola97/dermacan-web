@@ -1,13 +1,13 @@
 <?php
 include("conexion.php");
-$db = DataBase::connect();
+
 date_default_timezone_set("America/Guayaquil");
 
 $email = $_GET['email'];
 $pass = $_GET['contrasenia'];
 $arreglo = array();
 
-$sql = "select * from usuarios where usu_mail='".$email."' and usu_contrasenia='".$pass."';
+$sql = "select * from usuario where mail_usu='$email' and contrasenia_usu='$pass'";
 
 
 $respuesta = $db->query($sql);
