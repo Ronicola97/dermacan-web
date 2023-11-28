@@ -12,7 +12,7 @@ $pass = $_POST['contrasenia'];
 $cel = $_POST['celular'];
 $estado = 1;
 
-$resultado = mysqli_query($conn, "select * FROM usuario WHERE usu_cedula = '$dni'");
+$resultado = mysqli_query($conn, "select * FROM usuario WHERE cedula_usu = '$dni'");
 $numerodefilas = mysqli_num_rows($resultado);
 
 if ($numerodefilas > 0) {
