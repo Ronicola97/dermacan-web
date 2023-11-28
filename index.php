@@ -2,7 +2,7 @@
 require_once "conexion.php";
 $sql = "select * from usuario";
 $respuesta = $conn->query($sql);
-echo $respuesta;
+echo "$respuesta";
 ?>
 
 <!DOCTYPE html>
