@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+require_once "conexion.php";
 $sql = "select * from usuario";
 $respuesta = $db->query($sql);
 echo $respuesta;
