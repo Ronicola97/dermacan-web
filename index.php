@@ -1,5 +1,8 @@
 <?php
 include("conexion.php");
+$sql = "select * from usuario";
+$respuesta = $db->query($sql);
+echo $respuesta;
 ?>
 
 <!DOCTYPE html>
