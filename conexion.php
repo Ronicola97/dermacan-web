@@ -1,11 +1,14 @@
 <?php
-    $servername = "localhost";
-    $username ="id20131810_aglyg";
-    $password ="=ASgDn6{%1U/r^D2";
-    $bd ="id20131810_cowapp";
+
+session_start();
+$DB_HOST = $_ENV["DB_HOST"];
+$DB_USER = $_ENV["DB_USER"];
+$DB_PASSWORD = $_ENV["DB_PASSWORD"];
+$DB_NAME = $_ENV["DB_NAME"];
+$DB_PORT = $_ENV["DB_PORT"];
 
     //crear conexion BD
-    $conn = new mysqli($servername, $username, $password, $bd);
+    $conn = new mysqli("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
 
     //Comprobar conexion
     if ($conn->connect_error){
