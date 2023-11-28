@@ -2,7 +2,9 @@
 require_once "conexion.php";
 $sql = "select * from usuario";
 $respuesta = $conn->query($sql);
-echo "$respuesta";
+
+$no_filas = $respuesta->num_rows;
+echo $no_filas;
 ?>
 
 <!DOCTYPE html>
