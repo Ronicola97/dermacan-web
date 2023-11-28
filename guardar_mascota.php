@@ -1,6 +1,6 @@
 <?php
-include("../bd/conexion.php");
-$db = DataBase::connect();
+include("conexion.php");
+
 date_default_timezone_set("America/Guayaquil");
 
 $n_perro = $_POST['nombre_perro'];
@@ -13,10 +13,10 @@ if ($numerodefilas > 0) {
     $existe = "existe";
     echo $existe;
 }else{
-$sentencia = "INSERT INTO `mascota`(`pet_name`, `pet_dir`, `pet_nacimiento`, 
-            `pet_estado`, `raza_id`, `usu_cedula`) 
+$sentencia = "INSERT INTO mascota(pet_name, pet_dir, pet_nacimiento, 
+            pet_estado, raza_id, usu_cedula) 
 		VALUES ('$n_perro','$direc', '$date','1', '$tipo_raza', '$n_prop')";
-$respuesta = $db->query($sentencia);
+$respuesta = $conn->query($sentencia);
 }
 
 if($respuesta==true){
