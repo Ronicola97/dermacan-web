@@ -10,7 +10,7 @@ $arreglo = array();
 $sql = "select * from usuario where mail_usu='$email' and contrasenia_usu='$pass'";
 
 
-$respuesta = $db->query($sql);
+$respuesta = $conn->query($sql);
 $no_filas = $respuesta->num_rows;
 if($no_filas>0){
 	while($filas = $respuesta->fetch_assoc()){
