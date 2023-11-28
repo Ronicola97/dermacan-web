@@ -22,4 +22,5 @@ else{
 	echo json_encode($arreglo,JSON_UNESCAPED_UNICODE);	
 }
 
+$conn->close();
 ?>
