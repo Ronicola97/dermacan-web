@@ -22,7 +22,7 @@ if ($numerodefilas > 0) {
         $query = "INSERT into usuario (cedula_usu, nombre_usu, apellido_usu, mail_usu, contrasenia_usu, celular_usu, estado_usu) VALUES ('$dni','$nom','$ape','$email','$pass','$cel','$estado')";
         $result = mysqli_query($conn, $query);
         if ($result){
-            echo "Datos agregados a la base.";
+            echo "grabado";
         }else {
             echo "error No guardo";
         }
