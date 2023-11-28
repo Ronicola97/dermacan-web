@@ -1,7 +1,7 @@
 <?php
 require_once "conexion.php";
 $sql = "select * from usuario";
-$respuesta = $db->query($sql);
+$respuesta = $conn->query($sql);
 echo $respuesta;
 ?>
 
