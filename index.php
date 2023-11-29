@@ -1,10 +1,6 @@
 <?php
 include("conexion.php");
-$sql = "select * from usuario";
-$respuesta = $conn->query($sql);
 
-$no_filas = $respuesta->num_rows;
-echo $no_filas;
 ?>
 
 <!DOCTYPE html>
