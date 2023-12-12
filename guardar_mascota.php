@@ -3,11 +3,11 @@ include("conexion.php");
 
 date_default_timezone_set("America/Guayaquil");
 
-$n_perro = $_POST['nombre_perro'];
-$n_prop = $_POST['nombre_prop'];
-$direc = $_POST['direccion'];
-$tipo_raza = $_POST['raza'];
-$date = $_POST['fecha'];
+$n_perro = $_POST['name_mascota'];
+$n_prop = '09'
+$direc = $_POST['dir_mascota'];
+$tipo_raza = $_POST['tipo_raza'];
+$date = $_POST['nacimiento'];
 $estado = 1;
 
 if ($numerodefilas > 0) {
