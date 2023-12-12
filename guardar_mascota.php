@@ -12,7 +12,7 @@ $estado = 1;
 
 
 $sentencia = "INSERT INTO mascota(nombre_pet, direccion_pet, fnaci_pet, 
-            pet, raza_pet, cedula_usu,estado_pet) 
+            pet, raz_pet, cedula_usu,estado_pet) 
 		VALUES ('$n_perro','$direc', '$date', '$tipo_raza', '$n_prop','$estado')";
 $respuesta = $conn->query($sentencia);
 
