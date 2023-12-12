@@ -10,15 +10,12 @@ $tipo_raza = $_POST['tipo_raza'];
 $date = $_POST['nacimiento'];
 $estado = 1;
 
-if ($numerodefilas > 0) {
-    $existe = "existe";
-    echo $existe;
-}else{
+
 $sentencia = "INSERT INTO mascota(nombre_pet, direccion_pet, fnaci_pet, 
-            pet, estado_pet, raza_id, cedula_usu) 
-		VALUES ('$n_perro','$direc', '$date','1', '$tipo_raza', '$n_prop')";
+            pet, raza_pet, cedula_usu,estado_pet) 
+		VALUES ('$n_perro','$direc', '$date', '$tipo_raza', '$n_prop','$estado')";
 $respuesta = $conn->query($sentencia);
-}
+
 
 if($respuesta==true){
 	echo 'grabado';
