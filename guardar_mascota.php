@@ -4,7 +4,7 @@ include("conexion.php");
 date_default_timezone_set("America/Guayaquil");
 
 $n_perro = $_POST['name_mascota'];
-$n_prop = '09'
+$n_prop = '09';
 $direc = $_POST['dir_mascota'];
 $tipo_raza = $_POST['tipo_raza'];
 $date = $_POST['nacimiento'];
