@@ -10,9 +10,11 @@ $tipo_raza = $_POST['tipo_raza'];
 $date = $_POST['nacimiento'];
 $estado = 1;
 
+$img = $_POST['imagen_mascota'];
 
-$sentencia = "INSERT INTO mascota(nombre_pet, direccion_pet, fnaci_pet, raz_pet, cedula_usu,estado_pet) 
-		VALUES ('$n_perro','$direc', '$date', '$tipo_raza', '$n_prop','$estado')";
+
+$sentencia = "INSERT INTO mascota(nombre_pet, direccion_pet, fnaci_pet, raz_pet, cedula_usu,estado_pet, foto_pet) 
+		VALUES ('$n_perro','$direc', '$date', '$tipo_raza', '$n_prop','$estado','$img')";
 $respuesta = $conn->query($sentencia);
 
 
