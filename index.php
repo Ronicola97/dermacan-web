@@ -1,9 +1,9 @@
 <?php
 include("conexion.php");
 
-$command = escapeshellcmd('test.py');
-$output = shell_exec($command);
-echo $output;
+$script = __DIR__ . DIRECTORY_SEPARATOR . "test.py";
+$result = shell_exec("python $script");
+echo "PHP got the result - $result";
 
 
 ?>
