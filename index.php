@@ -1,6 +1,11 @@
 <?php
 include("conexion.php");
 
+$command = escapeshellcmd('test.py');
+$output = shell_exec($command);
+echo $output;
+
+
 ?>
 
 <!DOCTYPE html>
