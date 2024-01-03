@@ -18,6 +18,7 @@ if ($result->num_rows > 0) {
   $_SESSION['nombre'] = $fila['nombre_usu'];
   $_SESSION['apellido'] = $fila['apellido_usu'];
   $_SESSION['mail'] = $fila['mail_usu'];
+  $_SESSION['estado'] = $fila['estado_usu'];
   $band = true;
 }
 

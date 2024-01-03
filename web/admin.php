@@ -1,6 +1,8 @@
 <?php
-//include("../db/conexion.php");
-if(isset($_SESSION['cedula_usu'])==false) header("location:../index.php");
+
+if(isset($_SESSION['cedula_usu'])==false){
+  header("location:../index.php");
+} 
 
 ?>
 
