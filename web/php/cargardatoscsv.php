@@ -49,10 +49,10 @@ foreach ($datos as $fila):
     $id_mas = $fila[25];
     $name_masc = "-";
     $sector = "-";
-    $fnaci = date('d-m-Y');
+    $fnaci = date('Y-m-d');
     $raz_pet = "-";
 
-    $fechaActual = date('d-m-Y');
+    $fechaActual = date('Y-m-d');
     $estado = 1;
     $id_ficha = $fila[26];
 
