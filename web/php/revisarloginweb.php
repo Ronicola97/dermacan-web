@@ -1,31 +1,27 @@
 <?php
-include("../../db/conexion.php"); // No need for session_start() here
+include("../../db/conexion.php");
 date_default_timezone_set("America/Guayaquil");
 
-$email = $_POST['usuario'] ?? ''; // Handle missing input
-$pass = $_POST['clave'] ?? '';  // Handle missing input
+$email = $_POST['usuario'];
+$pass = $_POST['clave'];
 
-// Prepared statement to prevent SQL injection
-$stmt = $conn->prepare("SELECT * FROM usuario WHERE mail_usu=? AND contrasenia_usu=?");
-if (!$stmt) {
-  die("Error preparing statement: " . $conn->error); // Handle statement error
-}
-$stmt->bind_param("ss", $email, $pass);
-$stmt->execute();
-$result = $stmt->get_result();
+$band = false;
 
-// Check for successful login
-if ($result->num_rows > 0) {
-  $fila = $result->fetch_assoc();
-  $_SESSION['cedula_usu'] = $fila['cedula_usu'];
-  $_SESSION['nombre'] = $fila['nombre_usu'];
-  $_SESSION['apellido'] = $fila['apellido_usu'];
-  $_SESSION['mail'] = $fila['mail_usu'];
-  $_SESSION['estado'] = $fila['estado_usu'];
-  header("location:../admin.php");
-} else {
-  header("location:../index.php");
+$sql = "select * from usuario where mail_usu='$email' and contrasenia_usu='$pass'";
+
+
+$respuesta = $conn->query($sql);
+
+while($fila = $respuesta->fetch_array()){
+    $_SESSION['cedula_usu'] = $fila['cedula_usu'];
+    $_SESSION['nombre']= $fila['nombre_usu'];
+    $_SESSION['apellido']= $fila['apellido_usu']; 
+    $_SESSION['mail']= $fila['mail_usu'];    
+    $band = true;
 }
 
-$stmt->close(); // Close statement
+if ($band) {
+    header("location:../admin.php");
+}
+else header("location:../index.php");
 ?>
