@@ -67,9 +67,9 @@ foreach ($datos as $fila):
             VALUES ('$id_mas','$name_masc','$sector','$fnaci','$raz_pet','$dni','$estado')";
             $respuesta = $conn->query($sentencia);
             if($respuesta==true){
-                echo 'grabado';
+                echo 'grabado masc';
             }else{
-                echo 'Se ha producido un error';
+                echo 'Se ha producido un error masc';
             }
         }
     
@@ -77,73 +77,72 @@ foreach ($datos as $fila):
     if(true){
         
         $sql = "INSERT INTO ficha_dermatologica
-            ('id_fcder',
-            `fecha_fcder`,
-            `id_mas`,
-            `estado_fcder`,
-            `alo_cabe`,
-            `alo_ore`,
-            `alo_cue`,
-            `alo_lom`,
-            `alo_ext`,
-            `alo_abdo`,
-            `pica_lev`,
-            `pica_mod`,
-            `pica_int`,
-            `enrojecimiento`,
-            `cost_peq`,
-            `cost_med`,
-            `cost_gran`,
-            `pg_lv`,
-            `pg_pron`,
-            `pg_gra`,
-            `pust_peq`,
-            `pust_gran`,
-            `mal_olor`,
-            `eritema`,
-            `sacu_cabe`,
-            `cerum_oid`)
+            (id_fcder,
+            fecha_fcder,
+            id_mas,
+            estado_fcder,
+            alo_cabe,
+            alo_ore,
+            alo_cue,
+            alo_lom,
+            alo_ext,
+            alo_abdo,
+            pica_lev,
+            pica_mod,
+            pica_int,
+            enrojecimiento,
+            cost_peq,
+            cost_med,
+            cost_gran,
+            pg_lv,
+            pg_pron,
+            pg_gra,
+            pust_peq,
+            pust_gran,
+            mal_olor,
+            eritema,
+            sacu_cabe,
+            cerum_oid)
             VALUES
             ('$id_ficha',
             '$fechaActual',
             '$id_mas',
             '$estado',
-            `$alo_cabe`,
-            `$alo_ore`,
-            `$alo_cue`,
-            `$alo_lom`,
-            `$alo_ext`,
-            `$alo_abdo`,
-            `$pica_lev`,
-            `$pica_mod`,
-            `$pica_int`,
-            `$enrojecimiento`,
-            `$cost_peq`,
-            `$cost_med`,
-            `$cost_gran`,
-            `$pg_lv`,
-            `$pg_pron`,
-            `$pg_gra`,
-            `$pust_peq`,
-            `$pust_gran`,
-            `$mal_olor`,
-            `$eritema`,
-            `$sacu_cabe`,
-            `$cerum_oid`);";
+            '$alo_cabe',
+            '$alo_ore',
+            '$alo_cue',
+            '$alo_lom',
+            '$alo_ext',
+            '$alo_abdo',
+            '$pica_lev',
+            '$pica_mod',
+            '$pica_int',
+            '$enrojecimiento',
+            '$cost_peq',
+            '$cost_med',
+            '$cost_gran',
+            '$pg_lv',
+            '$pg_pron',
+            '$pg_gra',
+            '$pust_peq',
+            '$pust_gran',
+            '$mal_olor',
+            '$eritema',
+            '$sacu_cabe',
+            '$cerum_oid');";
 
             $respuesta2 = $conn->query($sql);
         if($respuesta2==true){
-            echo 'grabado2';
+            echo 'grabado ficha';
             $porcentaje = 100;
             $verificado_diag = "SI";
 
             $sql_diagnostico = "INSERT INTO diagnostico
-            (
-            `porcentaje_diag`,
-            `enf_diag`,
-            `id_fcder`,
-            `estado_diag`,
-            `verificado_diag`)
+            (porcentaje_diag,
+            enf_diag,
+            id_fcder,
+            estado_diag,
+            verificado_diag)
             VALUES
             ('$porcentaje',
             '$enfermedad',
@@ -155,7 +154,7 @@ foreach ($datos as $fila):
             $respuesta3 = $conn->query($sql_diagnostico);
 
             if($respuesta3==true){
-                echo 'grabado';
+                echo 'grabado diag';
             }else{
                 echo 'Se ha producido un error';
             }
