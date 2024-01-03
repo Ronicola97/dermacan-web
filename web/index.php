@@ -3,6 +3,10 @@ include("../db/conexion.php");
 
 ?>
 
+<head>
+  <title>Dermacan web</title>
+</head>
+
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="../assets/css/login.css" rel="stylesheet">

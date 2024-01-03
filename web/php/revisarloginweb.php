@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../db/conexion.php");
+include("../../db/conexion.php");
 date_default_timezone_set("America/Guayaquil");
 
 $email = $_POST['usuario'];
