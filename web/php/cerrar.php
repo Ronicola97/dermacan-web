@@ -1,4 +1,5 @@
 <?php
+include("../../db/conexion.php");
 // Destruir la sesión
 session_destroy();
 
