@@ -1,7 +1,6 @@
 <?php
 
 include("../db/conexion.php");
-$db = DataBase::connect();
 date_default_timezone_set("America/Guayaquil");
 ?>
 
