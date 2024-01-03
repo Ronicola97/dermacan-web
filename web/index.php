@@ -18,7 +18,7 @@ include("../db/conexion.php");
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form method="post" action="almacenar/revisarlogin.php">
+        <form method="post" action="php/revisarloginweb.php">
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Iniciar sesión</p>            
           </div>
@@ -27,14 +27,14 @@ include("../db/conexion.php");
 
           <!-- Email input -->
           <div class="form-group mb-4">
-            <input type="text" id="" class="form-control" placeholder="Ingrese un usuario válido" name="usuario" required/>
-            <label class="form-label" for="form3Example3">Usuario</label>
+            <input type="text" id="" class="form-control" placeholder="Ingrese un email válido" name="usuario" required/>
+            <label class="form-label" for="form3Example3">Email</label>
           </div>
 
           <!-- Password input -->
           <div class="form-group mb-4">
             <input type="password" id="" name="clave" class="form-control"
-              placeholder="Ingrese contraseña" required/>
+              placeholder="Ingrese la contraseña" required/>
             <label class="form-label" for="form3Example4">Contraseña</label>
           </div>
 
