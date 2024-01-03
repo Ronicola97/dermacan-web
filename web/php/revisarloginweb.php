@@ -9,11 +9,11 @@ $pass = $_POST['clave'];
 $stmt = $conn->prepare("SELECT * FROM usuario WHERE mail_usu=? AND contrasenia_usu=?");
 $stmt->bind_param("ss", $email, $pass);
 $stmt->execute();
-$result = $stmt->get_result();
+$respuesta = $stmt->get_result();
 
 $band = false;
-if ($result->num_rows > 0) {
-  $fila = $result->fetch_assoc();
+
+while($fila = $respuesta->fetch_array()){
   $_SESSION['cedula_usu'] = $fila['cedula_usu'];
   $_SESSION['nombre'] = $fila['nombre_usu'];
   $_SESSION['apellido'] = $fila['apellido_usu'];
@@ -21,6 +21,7 @@ if ($result->num_rows > 0) {
   $_SESSION['estado'] = $fila['estado_usu'];
   $band = true;
 }
+
 
 if ($band) {
   header("location:../admin.php");
