@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 if(isset($_SESSION['cedula_usu'])==false) header("location:../index.php");
 
 ?>
@@ -56,10 +56,10 @@ if(isset($_SESSION['cedula_usu'])==false) header("location:../index.php");
       <div class="container">
 
         <div class="section-title">
-          <h2>Resumen del cultivo</h2>      
+          <h2>Resumen</h2>      
         </div>       
         <div class="row">      
-            <h3 class="text-center">Información de Lotes</h3>            
+            <h3 class="text-center">Información</h3>            
             <hr>       
         </div>     
         <section id="gallery">
@@ -71,16 +71,16 @@ if(isset($_SESSION['cedula_usu'])==false) header("location:../index.php");
                   <!-- <img src="../assets/img/fondo.jpg" alt="" class="card-img-top"> -->
                   <div class="card-body">
                     
-                    <h5 class="card-title"><b>Lote  </b> </h5>
+                    <h5 class="card-title"><b>Dato 0  </b> </h5>
                     
                     <p class="card-text">
-                      <b>Cantidad: </b>
+                      <b>Dato 1: </b>
                     </p>
                     <p class="card-text">
-                      <b>Variedad:</b> 
+                      <b>Dato 2:</b> 
                     </p> 
                     <p class="card-text">
-                      <b>Siembra: </b>
+                      <b>Dato 3: </b>
                     </p>
                            
                     <!-- <a href="" class="btn btn-outline-success btn-sm">Ver más</a>
