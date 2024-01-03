@@ -5,6 +5,10 @@ include("../db/conexion.php");
 
 <head>
   <title>Dermacan web</title>
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 </head>
 
 
