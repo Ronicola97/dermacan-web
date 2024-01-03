@@ -1,7 +1,7 @@
 <?php
 include("../db/conexion.php");
-
 date_default_timezone_set("America/Guayaquil");
+ 
 
 $email = $_GET['email'];
 $pass = $_GET['contrasenia'];
@@ -23,4 +23,7 @@ else{
 }
 
 $conn->close();
+if(isset($_SESSION['cedula_usu'])==false){
+	header("location:../index.php");
+}
 ?>
