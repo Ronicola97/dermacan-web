@@ -48,9 +48,9 @@ foreach ($datos as $fila):
 
     $id_mas = $fila[25];
     $name_masc = "-";
-    $sector = "-"
+    $sector = "-";
     $fnaci = date('d-m-Y');
-    $raz_pet = "-"
+    $raz_pet = "-";
 
     $fechaActual = date('d-m-Y');
     $estado = 1;
@@ -171,7 +171,7 @@ foreach ($datos as $fila):
 
 endforeach;
 
-
+$conn->close();
 ?>
 
 

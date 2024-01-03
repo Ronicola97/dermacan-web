@@ -23,6 +23,6 @@ if($respuesta==true){
 }else{
 	echo 'Se ha producido un error';
 }
-
+$conn->close();
 
 ?>
