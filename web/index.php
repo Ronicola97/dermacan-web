@@ -1,6 +1,6 @@
 <?php
 include("../db/conexion.php");
-
+date_default_timezone_set("America/Guayaquil");
 if(isset($_SESSION['cedula_usu'])){
   header("location:admin.php");
 } 

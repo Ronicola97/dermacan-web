@@ -1,7 +1,9 @@
 <?php
 
+if(isset($_SESSION['cedula_usu'])==false){
+  header("location:../index.php");
+} 
 
-date_default_timezone_set("America/Guayaquil");
 ?>
 
 <!-- ======= Header ======= -->

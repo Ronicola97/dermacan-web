@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("America/Guayaquil");
 // Destruir la sesión
 session_destroy();
 
