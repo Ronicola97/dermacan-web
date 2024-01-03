@@ -49,7 +49,7 @@ if(isset($_SESSION['cedula_usu'])==false){
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <?php include("menu.php"); ?>
+  <?php include("../menu.php"); ?>
 
   <main id="main">
 
