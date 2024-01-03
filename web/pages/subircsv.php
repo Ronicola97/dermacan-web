@@ -66,6 +66,11 @@ if(isset($_SESSION['cedula_usu'])==false){
         </div>     
         <section id="gallery">
           <div class="container">
+
+            <form action="../php/cargardatoscsv.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="csv" value="" />
+                <input type="submit" name="submit" value="Save" />
+            </form>
             
           </div>  
                 
