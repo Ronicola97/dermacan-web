@@ -1,8 +1,6 @@
 <?php
 
-if(isset($_SESSION['cedula_usu'])==false){
-  header("location:../index.php");
-} 
+
 
 ?>
 
