@@ -1,7 +1,7 @@
 <?php
 
 // Obtenemos el archivo CSV
-$archivo = $_FILES['archivo'];
+$archivo = $_FILES['csv'];
 
 // Comprobamos que el archivo sea válido
 if ($archivo['error'] != UPLOAD_ERR_OK) {
