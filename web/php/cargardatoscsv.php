@@ -102,7 +102,8 @@ foreach ($datos as $fila):
             mal_olor,
             eritema,
             sacu_cabe,
-            cerum_oid)
+            cerum_oid,
+            edad_meses)
             VALUES
             ('$id_ficha',
             '$fechaActual',
@@ -129,7 +130,8 @@ foreach ($datos as $fila):
             '$mal_olor',
             '$eritema',
             '$sacu_cabe',
-            '$cerum_oid');";
+            '$cerum_oid',
+            '$edad');";
 
             $respuesta2 = $conn->query($sql);
         if($respuesta2==true){
