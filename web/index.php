@@ -2,7 +2,7 @@
 include("../db/conexion.php");
 
 if(isset($_SESSION['cedula_usu'])){
-  header("location:../admin.php");
+  header("location:admin.php");
 } 
 ?>
 
