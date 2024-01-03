@@ -83,7 +83,8 @@ $sql = "INSERT INTO ficha_dermatologica
             mal_olor,
             eritema,
             sacu_cabe,
-            cerum_oid)
+            cerum_oid,
+            edad_meses)
             VALUES
             ('$fechaActual', '$id_mas', '$estado',
             '$alo_cabe',
@@ -107,7 +108,8 @@ $sql = "INSERT INTO ficha_dermatologica
             '$mal_olor',
             '$eritema',
             '$sacu_cabe',
-            '$cerum_oid');";
+            '$cerum_oid',
+            '$edadMeses');";
 
             $respuesta = $conn->query($sql);
 
