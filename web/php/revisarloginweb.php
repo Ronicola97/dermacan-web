@@ -11,7 +11,7 @@ $band = false;
 $sql = "select * from usuario where mail_usu='$email' and contrasenia_usu='$pass'";
 
 
-$respuesta = $db->query($sql);
+$respuesta = $conn->query($sql);
 
 while($fila = $respuesta->fetch_array()){
     $_SESSION['cedula_usu'] = $fila['cedula_usu'];
