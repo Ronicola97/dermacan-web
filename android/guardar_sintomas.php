@@ -131,11 +131,6 @@ if($respuesta==true){
 
   $data = <<<DATA
   {
-    "Id": 78912,
-    "Customer": "Jason Sweet",
-    "Quantity": 1,
-    "Price": 18.00
-
     "edad": '$edadMeses',
     "alo_cabe": '$alo_cabe',
     "alo_ore": '$alo_ore',
