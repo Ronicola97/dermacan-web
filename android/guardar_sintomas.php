@@ -115,7 +115,45 @@ $sql = "INSERT INTO ficha_dermatologica
 
 
 if($respuesta==true){
-	echo 'grabado';
+	//echo 'grabado';
+  $datos = json_encode(array(
+      "edad" => $edadMeses,
+      "alo_cabe" => $alo_cabe,
+      "alo_ore" => $alo_ore,
+      "alo_cue" => $alo_cue,
+      "alo_lom" => $alo_lom,
+      "alo_ext" => $lo_ext,
+      "alo_abdo" => $alo_abdo,
+      "pica_lev" => $pica_lev,
+      "pica_mod" => $pica_mod,
+      "pica_int" => $pica_int,
+      "enrojecimiento" => $enrojecimiento,
+      "cost_peq" => $cost_peq,
+      "cost_med" => $cost_med,
+      "cost_gran" => $cost_gran,
+      "pg_lv" => $pg_lv,
+      "pg_pron" => $pg_pron,
+      "pg_gra" => $pg_gra,
+      "pust_peq" => $pust_peq,
+      "pust_gran" => $pust_gran,
+      "mal_olor" => $mal_olor,
+      "eritema" => $eritema,
+      "sacu_cabe" => $sacu_cabe,
+      "cerum_oid" => $cerum_oid
+  ));
+
+  // Se envían los datos a la vista de Django Rest
+  $respuesta = requests.post("https://dermacan-ml.up.railway.app/run-python-script/", json=datos)
+
+  // Se comprueba si la respuesta fue correcta
+  if $respuesta:
+    // Se muestra un mensaje de éxito
+    echo $respuesta;
+  else:
+    // Se muestra un mensaje de error
+    echo 'Se ha producido un error';
+
+
 }else{
 	echo 'Se ha producido un error';
 }
