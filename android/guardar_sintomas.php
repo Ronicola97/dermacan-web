@@ -136,7 +136,7 @@ if($respuesta==true){
     "alo_ore": '$alo_ore',
     "alo_cue": '$alo_cue',
     "alo_lom": '$alo_lom',
-    "alo_ext": '$lo_ext',
+    "alo_ext": '$alo_ext',
     "alo_abdo": '$alo_abdo',
     "pica_lev": '$pica_lev',
     "pica_mod": '$pica_mod',
