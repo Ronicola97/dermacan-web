@@ -151,11 +151,11 @@ if($respuesta==true){
     echo $respuesta;
   else:
     // Se muestra un mensaje de error
-    echo 'Se ha producido un error';
+    echo 'error';
 
 
 }else{
-	echo 'Se ha producido un error';
+	echo 'error';
 }
 $conn->close();
 
