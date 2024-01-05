@@ -16,6 +16,11 @@ $imagen_base64 = $_POST['imagen_mascota'];
 // Decodificar la imagen Base64
 $imagen_binaria = base64_decode($imagen_base64);
 
+// Verifica si el directorio no existe y créalo si es necesario
+if (!is_dir('../imagenes')) {
+    mkdir('../imagenes', 0777, true); // Esto crea el directorio con permisos de lectura, escritura y ejecución para todos
+}
+
 // Guardar la imagen en una ruta específica en tu servidor (por ejemplo, en una carpeta llamada 'imagenes')
 $ruta_imagen = '../imagenes/' . uniqid() . '.jpg';  // Aquí estás generando un nombre único para la imagen
 $resultado_guardado = file_put_contents($ruta_imagen, $imagen_binaria);
