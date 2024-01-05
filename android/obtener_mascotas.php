@@ -9,20 +9,25 @@ $arreglo = array();
 
 $sql = "select * from mascota where cedula_usu='$dueno'";
 
-
 $respuesta = $conn->query($sql);
 $no_filas = $respuesta->num_rows;
 if($no_filas>0){
 	while ($filas = $respuesta->fetch_assoc()) {
         // Asumiendo que la columna 'url_imagen' almacena la URL de la imagen en GCS
         $imagen_url = $filas['ruta_imagen'];
-        
+
+		$fechaNacimiento = $filas['fnaci_pet'];
+        $fechaActual = date('Y-m-d');
+		$diferencia = strtotime($fechaActual) - strtotime($fechaNacimiento);
+		$edadMeses = $diferencia / (30.5 * 86400);
+
+
         // Si deseas agregar más campos o modificar la estructura de los datos, puedes hacerlo aquí
         $mascota_data = array(
             'id_pet' => $filas['id_pet'],
             'nombre_pet' => $filas['nombre_pet'],
             'direccion_pet' => $filas['direccion_pet'],
-            'fnaci_pet' => $filas['fnaci_pet'],
+            'fnaci_pet' => $edadMeses,
             'raz_pet' => $filas['raz_pet'],
             'cedula_usu' => $filas['cedula_usu'],
             'estado_pet' => $filas['estado_pet'],
