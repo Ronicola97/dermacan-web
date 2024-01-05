@@ -187,7 +187,7 @@ if($respuesta==true){
         $respuesta = $conn->query($sentencia);
 
         if ($respuesta == true) {
-            echo 'grabado';
+            $verificado = 0;
         } else {
             echo 'Se ha producido un error';
         }
