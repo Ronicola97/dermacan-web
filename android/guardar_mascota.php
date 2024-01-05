@@ -32,7 +32,8 @@ $bucket = $storage->bucket($bucketName);
 $object = $bucket->upload(
     fopen($temp_file, 'r'),
     [
-        'name' => uniqid().'.jpg' // Nombre único para el archivo
+        'name' => uniqid().'.jpg', // Nombre único para el archivo
+		'predefinedAcl' => 'publicRead'
     ]
 );
 $imageUrl = $object->info()['mediaLink']; // Obtener la URL de la imagen en GCS
