@@ -13,7 +13,7 @@ $tipo_raza = $_POST['tipo_raza'];
 $date = $_POST['nacimiento'];
 $estado = 1;
 
-$resultado = mysqli_query($conn, "select * FROM mascota WHERE (cedula_usu = '$n_prop' OR nombre_pet = '$n_perro')");
+$resultado = mysqli_query($conn, "select * FROM mascota WHERE (cedula_usu = '$n_prop' AND nombre_pet = '$n_perro')");
 $numerodefilas = mysqli_num_rows($resultado);
 
 if ($numerodefilas > 0) {
