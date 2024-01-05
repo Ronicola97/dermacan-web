@@ -27,7 +27,7 @@ if($no_filas>0){
             'id_pet' => $filas['id_pet'],
             'nombre_pet' => $filas['nombre_pet'],
             'direccion_pet' => $filas['direccion_pet'],
-            'fnaci_pet' => $edadMeses,
+            'fnaci_pet' => intval($edadMeses),
             'raz_pet' => $filas['raz_pet'],
             'cedula_usu' => $filas['cedula_usu'],
             'estado_pet' => $filas['estado_pet'],
