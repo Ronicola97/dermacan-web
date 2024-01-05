@@ -1,6 +1,9 @@
 <?php
 include("../db/conexion.php");
 
+require 'vendor/autoload.php';
+use Google\Cloud\Storage\StorageClient;
+
 date_default_timezone_set("America/Guayaquil");
 
 $n_perro = $_POST['name_mascota'];
@@ -18,13 +21,13 @@ if ($numerodefilas > 0) {
 	    echo $existe;
 	}else{
 
+
         // Decodificar la imagen en Base64
         $imagen_base64 = $_POST['imagen_mascota'];
         $imagen_decodificada = base64_decode($imagen_base64);
 
         // Configurar la conexión con Google Cloud Storage
-        require 'vendor/autoload.php';
-        use Google\Cloud\Storage\StorageClient;
+        
 
         $storage = new StorageClient([
             'keyFilePath' => 'adept-portal-397013-1d8a23b30297.json', // Ruta a tu archivo de credenciales
