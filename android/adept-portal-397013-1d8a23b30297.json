@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "adept-portal-397013",
+  "private_key_id": "1d8a23b302979e5aedd99030be53420219d69ee8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1uEVfit3xLL/7\nzL1k/s7GUNw5izFesCs0JymooNUA0OxCb+bEbnWj285SDZ2sNQ7oZtnIWyrIiaWQ\n2O69aVOf6kTF/4ObEcaydhKuH7G+j2UM1jRE8ZNG5Pim3tJFCWUiQP8QVmrgDa0f\nnPYFyJ2tmET4yx1t6SsYOj0x8hcJ/4+oCDhtAgk3tWK0ea4j5oxSJmnz1Y8zt4Vd\nwqZCRbzerEWX9FBVnLbCLvtDS7GkekJBLPAgFwqYizA6S+S+Xrezhn/lwUjUIxiO\nRa8WlloJqbrN7jJ5TtoL2c8mOL3DEsnmAcOfAq5ms1Ee8GnmV9kJe+RBTKA2p3g8\na/DZJRFPAgMBAAECggEAKvXI5Mj6Jkmbi4ZAIi/BJ443Oh1niwif9iDqDtUS9jHu\nINi+mCK7CgVtdeWFKJCUmSmzg9PVvfoYm7FFY58SZ4RlRN/et5rQvCEA0oxoo3HY\nBFxhmAj6dfCsvhqAYFTTxXDTPAQKGTTygD5FxWFDsaYFbEHsj67ngr9F91hRzQlp\nE3c757LRkfIelmrbjwu8OZrtPwOl1CWIyIOhAnNnDOhonEjFL9QG1HOfpf5o4tPU\n7t9vyp+lsWvMojIpQJgv/Ykus7NvKDFu4XdV0QOI6RnZqBebh+I51H96Ki/iNcC1\nv8OOaYcOhZn/G0eavGDyfOr3bkSHnEvQvbsbroie6QKBgQDqNm6dnECjNkohepJn\n/BzyDDbwKZJ3ezdequUi9uC+fNfqMuYjy+yxTsSxgfEyy2YUIgzSm16AqHENK0n7\nKDolgEdscvBI+AQbiOhNXnwKH1EfTbirlWdTgO3W0Wm+Mcw19OFDIoiw2A1pU+o0\n+HJdENFGzDmQybdr4twxCKl4qQKBgQDGn8TBwM6Yj82kCq5xgViMIdBEIebyN32m\nKj7us4pxc6zTRky216xCeqcuo5YUYs+6pZWAKxnOCVuTW4/rtJqm15C6n1ogbLia\nHZee7mqhyw4u7cLHzzrUzwZUc+/uMxIgG4DpOXndn7D48pwpWM5L3eAFJNbRtvyr\n1oDMHykdNwKBgCZV6H8lvzK3xSR7spEQpBA+TZO7yjyCT4rQQBcb/6dOOe0cjazY\nSRKwiONhGICu6DNta1nhknNOnsqABmj0qafPumEW4xuedNWo8BUR3Q2vGJEeIJb9\nKl9xn/xkZIF8FyfRwDlD4snHY1KVKKWo8Nco1IhZDycSzVH8XPwtpceZAoGADGkp\nQy4H+rJpmAlu0vrRDJiESe2QX6wl9r8HBaVETkh7EQyAeKBLTDAbyCdClm2CK1hz\nWfnXd+9PwIplGMZFL42ipnaUjBgfBMo6khy1nvxwG3CRzihdtbRl4dsIr+qTBFyT\nln8X5Ug4J6YJKfA5m7X2bHvbzGjRqu8RRy/fQssCgYEAvya1TVHCOD6SIc9o4u3j\nWrY47EQe4q/RBah23QaISejZPr4bqZZtz2EiRhQYbExGFig4fiAy1amY0CbtX4Eu\nbygB66MnAZGfIMLEZQnYXOduWDnsPrE4IvXXSbPDGkt+jyKPYPm8+yWkwfWPjW2F\nhBiHDhTt4kbyb3Z5N67MsUg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dermacan@adept-portal-397013.iam.gserviceaccount.com",
+  "client_id": "109005695362597405319",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dermacan%40adept-portal-397013.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
