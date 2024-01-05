@@ -168,9 +168,9 @@ if($respuesta==true){
 // Ejecutar la consulta
   $resultado_idf = $conn->query($consulta_idf);
 
-  $no_filas = $respuesta_idf->num_rows;
+  $no_filas = $resultado_idf->num_rows;
   if($no_filas>0){
-    while ($filas = $respuesta_idf->fetch_assoc()) {
+    while ($filas = $resultado_idf->fetch_assoc()) {
       $id_fcder = $filas['id_fcder'];
     }
   }
