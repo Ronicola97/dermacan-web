@@ -164,6 +164,35 @@ if($respuesta==true){
 
   echo $resp;
 
+  $consulta_idf = "SELECT id_fcder,id_mas FROM ficha_dermatologica where (id_mas ='$id_mas') order by id_fcder desc limit 1;";
+// Ejecutar la consulta
+  $resultado_idf = $conn->query($consulta_idf);
+
+  $no_filas = $respuesta_idf->num_rows;
+  if($no_filas>0){
+    while ($filas = $respuesta_idf->fetch_assoc()) {
+      $id_fcder = $filas['id_fcder'];
+    }
+  }
+
+  $datos = json_decode($resp);
+  $enfermedad = $datos->prediccion;
+  $probabilidad = $datos->probabilidad;
+
+  $verificado = 0;
+
+
+  $sentencia = "INSERT INTO diagnostico(porcentaje_diag, enf_diag, id_fcder, estado_diag, verificado_diag) 
+                VALUES ('$probabilidad','$enfermedad', '$id_fcder', '$estado', '$verificado')";
+        $respuesta = $conn->query($sentencia);
+
+        if ($respuesta == true) {
+            echo 'grabado';
+        } else {
+            echo 'Se ha producido un error';
+        }
+
+
 
 }else{
 	echo 'error';
