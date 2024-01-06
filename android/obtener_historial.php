@@ -7,7 +7,7 @@ $dueno = $_GET['cedula'];
 
 $arreglo = array();
 
-$sql = "select m.id_pet, m.nombre_pet, m.ruta_imagen, fd.id_fcder,fd.fecha_fcder, d.enf_diag  
+$sql = "select m.id_pet, m.nombre_pet, m.ruta_imagen, fd.id_fcder,fd.fecha_fcder, d.enf_diag, d.id_diag  
 from mascota m, ficha_dermatologica fd, diagnostico d 
 where (m.cedula_usu='$dueno' and m.id_pet = fd.id_mas and fd.id_fcder = d.id_fcder) 
 order by fd.fecha_fcder desc limit 20 
@@ -25,7 +25,7 @@ if($no_filas>0){
             'id_fcder' => $filas['id_fcder'],
             'fecha_fcder' => $filas['fecha_fcder'],
             'diagnostico' => $filas['enf_diag'],
-             
+            'id_diag' => $filas['id_diag'],
         );
         
         array_push($arreglo, $historial_data);
