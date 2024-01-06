@@ -11,7 +11,7 @@ $id_diag = $_POST['id_diag'];
 
 
 $sql = "select * 
-from ficha_dermatologica fd, diagnostico d, mascota m 
+from ficha_dermatologica fd, diagnostico d, mascota m, usuario u
 where (
 fd.id_fcder = '$id_fcder' and
 m.id_pet = fd.id_mas and fd.id_fcder = d.id_fcder and u.cedula_usu = m.cedula_usu
