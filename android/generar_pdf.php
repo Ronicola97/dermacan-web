@@ -51,7 +51,10 @@ if ($result->num_rows > 0){
     // Verificar si el objeto ya existe en el bucket
     if ($bucket->object($objectName)->exists()) {
         // El archivo ya existe, devuelve su URL existente o realiza cualquier otra acción que necesites
-        $pdfUrl = 'URL_EXISTENTE_DEL_PDF';
+        $object = $bucket->object($objectName);
+    
+        // Obtener el URL del objeto existente
+        $pdfUrl = $object->signedUrl(new \DateTime('tomorrow')); // Genera una URL firmada válida hasta mañana
         echo $pdfUrl;
     } else {
         // El archivo no existe, procede a crear y subir el nuevo archivo PDF
