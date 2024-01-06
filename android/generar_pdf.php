@@ -1,6 +1,8 @@
 <?php
 include("../db/conexion.php");
 require('fpdf/fpdf.php');
+require 'vendor/autoload.php';
+use Google\Cloud\Storage\StorageClient;
 
 date_default_timezone_set("America/Guayaquil");
 
@@ -34,9 +36,32 @@ if ($result->num_rows > 0){
         $pdf->Cell(0, 10, 'Diagnóstico: ' . $row['enf_diag'], 0, 1);
     }
 
-    $pdf->Output();
+    $pdfData = $pdf->Output("", "S");
+
+    $storage = new StorageClient([
+        'keyFilePath' => 'adept-portal-397013-1d8a23b30297.json', // Ruta a tu archivo de credenciales
+        'projectId' => 'adept-portal-397013',
+    ]);
+    $bucketName = 'dermacan-storage';
+
+    $objectName = uniqid() . '.pdf';
+
+    $bucket = $storage->bucket($bucketName);
+    $object = $bucket->upload(
+        $pdfData,
+        [
+            'name' => $objectName, 
+            'predefinedAcl' => 'publicRead'
+        ]
+    );
+
+    $pdfUrl = $object->info()['mediaLink'];
+
+    echo $pdfUrl;
 
     
+}else{
+    echo "error";
 }
 
 
