@@ -38,26 +38,32 @@ if ($result->num_rows > 0){
 
     $pdfData = $pdf->Output("", "S");
 
-    $storage = new StorageClient([
-        'keyFilePath' => 'adept-portal-397013-1d8a23b30297.json', // Ruta a tu archivo de credenciales
-        'projectId' => 'adept-portal-397013',
-    ]);
-    $bucketName = 'dermacan-storage';
-
-    $objectName = uniqid() . '.pdf';
+    $objectName = $id_pet . '_' . $id_fcder . '_' . $id_diag . '.pdf';
 
     $bucket = $storage->bucket($bucketName);
-    $object = $bucket->upload(
-        $pdfData,
-        [
-            'name' => $objectName, 
-            'predefinedAcl' => 'publicRead'
-        ]
-    );
 
-    $pdfUrl = $object->info()['mediaLink'];
+    // Verificar si el objeto ya existe en el bucket
+    if ($bucket->object($objectName)->exists()) {
+        // El archivo ya existe, devuelve su URL existente o realiza cualquier otra acción que necesites
+        $object = $bucket->object($objectName);
+    
+        // Obtener el URL del objeto existente
+        $pdfUrl = $object->signedUrl(new \DateTime('tomorrow')); // Genera una URL firmada válida hasta mañana
+        echo $pdfUrl;
+    } else {
+        // El archivo no existe, procede a crear y subir el nuevo archivo PDF
+        // ... (tu código existente para crear el PDF)
+        $object = $bucket->upload(
+            $pdfData,
+            [
+                'name' => $objectName,
+                'predefinedAcl' => 'publicRead'
+            ]
+        );
 
-    echo $pdfUrl;
+        $pdfUrl = $object->info()['mediaLink'];
+        echo $pdfUrl;
+}
 
     
 }else{
