@@ -27,7 +27,7 @@ if ($result->num_rows > 0){
     $pdf->AddPage();
     $pdf->SetFont('Arial', 'B', 16);
 
-    $pdf->Cell(0, 10, 'Historial Médico', 0, 1, 'C');
+    $pdf->Cell(0, 10, 'Historial Medico', 0, 1, 'C');
 
     while ($row = $result->fetch_assoc()) {
         $pdf->SetFont('Arial', '', 12);
