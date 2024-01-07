@@ -104,7 +104,7 @@ if ($result->num_rows > 0){
     </body>
     </html>';
 
-    $pdf->render();
+    //$pdf->render();
     $pdfData = $pdf->output();
 
     $storage = new StorageClient([
