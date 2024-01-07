@@ -1,10 +1,15 @@
 <?php
 include("../db/conexion.php");
-
-use Dompdf\Dompdf;
-
 require 'vendor/autoload.php';
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 use Google\Cloud\Storage\StorageClient;
+
+$options = new Options();
+$options->set('isRemoteEnabled', true);
+
+$pdf = new Dompdf($options);
 
 date_default_timezone_set("America/Guayaquil");
 
@@ -29,7 +34,8 @@ if ($result->num_rows > 0){
         //mascota
         $nombre_pet = $row['nombre_pet'];
         $raz_pet = $row['raz_pet'];
-        
+
+        $ruta_imagen = $row['ruta_imagen'];
 
         //calculo edad
         $fechaNacimiento = $row['fnaci_pet'];
@@ -323,12 +329,6 @@ if ($result->num_rows > 0){
     </table>
 </div>';
 
-    
-    
-    
-
-    // Convertir los datos a un formato PDF
-    $pdf = new DOMPDF();
     $html = '
     <!DOCTYPE html>
 <html lang="es">
@@ -337,6 +337,8 @@ if ($result->num_rows > 0){
     <title>Ficha Dermatológica - Síntomas</title>
     <style>
         /* Estilos generales y de secciones */
+
+        
         body {
             font-family: Arial, sans-serif;
             padding: 5px;
@@ -355,6 +357,7 @@ if ($result->num_rows > 0){
             padding: 5px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         /* Estilos para Datos de la Mascota */
@@ -453,6 +456,13 @@ if ($result->num_rows > 0){
         .custom-list li a:hover {
             text-decoration: underline;
         }
+
+        /* Estilos generales para la sección de datos de la mascota */
+        .td100 {
+            width: 105px;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -460,24 +470,40 @@ if ($result->num_rows > 0){
     <div class="header">
         <h1>Ficha Dermatológica - Diagnóstico</h1>
     </div>
-    <div class="section datos-mascota">
-        <h2 class="section-title">Datos de la Mascota</h2>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Nombre:</th>
-                <th scope="col">Edad:</th>
-                <th scope="col">Raza:</th>
-            </tr>
-            </thead>
+    <div class="datos-mascota-container">
+        <table>
             <tbody>
-            <tr>
-                <td>'.$nombre_pet.'</td>
-                <td>'.$edad.'</td>
-                <td>'.$raz_pet.'</td>
-            </tr>
+                <tr>
+                    <td class="td100">
+                    <img class="imagen-mascota" src="'.$ruta_imagen.'" alt="Foto Mascota" width="100" height="100">
+                    </td>
+                    <td>
+                    <div class="section datos-mascota">
+                        <h2 class="section-title">Datos de la Mascota</h2>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Nombre:</th>
+                                <th scope="col">Edad:</th>
+                                <th scope="col">Raza:</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>'.$nombre_pet.'</td>
+                                <td>'.$edad.'</td>
+                                <td>'.$raz_pet.'</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    </td>
+                </td>
             </tbody>
         </table>
+        
+        
     </div>
     '.$seccion_sintomas.'
     <div class="section diagnostico">
