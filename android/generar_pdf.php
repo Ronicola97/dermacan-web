@@ -144,11 +144,26 @@ if ($result->num_rows > 0){
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>'.$pica_lev.'</td>
-                <td>'.$pica_mod .'</td>
-                <td>'.$pica_int.'</td>
-                
+            <tr>';
+    if($pica_lev == 1){
+        $tablaSintomas .='<td><input type="radio" name="picazon" value="" checked></td>';
+    }else{
+        $tablaSintomas .='<td><input type="radio" name="picazon" value=""></td>';
+    }
+
+    if($pica_mod == 1){
+        $tablaSintomas .='<td><input type="radio" name="picazon" value="" checked></td>';
+    }else{
+        $tablaSintomas .='<td><input type="radio" name="picazon" value=""></td>';
+    }
+
+    if($pica_int == 1){
+        $tablaSintomas .='<td><input type="radio" name="picazon" value="" checked></td>';
+    }else{
+        $tablaSintomas .='<td><input type="radio" name="picazon" value=""></td>';
+    }
+    
+    $tablaSintomas .='            
             </tr>
             </tbody>
         </table>
