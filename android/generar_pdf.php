@@ -76,93 +76,245 @@ if ($result->num_rows > 0){
         
     }
 
-    $tablaSintomas = '';
+    $seccion_sintomas = '';
 
-    if($alo_cabe == 1 || $alo_ore == 1 || $alo_cue == 1 || $alo_lom == 1 || $alo_ext == 1 || $alo_abdo == 1){
-        $tablaSintomas .='<h3 class="section-title">Alopecia</h3>';
-    }
-    $tablaSintomas .= '
-    
-        <table class="table">
-            <thead>
-            <tr>
-            ';
+    $seccion_sintomas .= '<div class="section sintomas-presentes">
+    <h2 class="section-title">Síntomas Presentes</h2>
+    <table class="table">
+        <thead>
+            <th colspan="2">Alopecia</th>
+            <th> Pústulas</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul class="custom-list">
+                    <li>';
+                    
     if($alo_cabe == 1){
-        $tablaSintomas .='<th scope="col">Cabeza:</th>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1">';
     }
+    $seccion_sintomas .= '<a href="#">Cabeza</a>
+                    </li>
+                    <li>';
     if($alo_ore == 1){
-        $tablaSintomas .='<th scope="col">Orejas:</th>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
+    $seccion_sintomas .= '<a href="#">Orejas</a>
+                    </li>
+                    <li>';
     if($alo_cue == 1){
-        $tablaSintomas .='<th scope="col">Cuello:</th>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
+    $tablaSintomas .='<a href="#">Cuello</a>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul class="custom-list">
+                    <li>';
     if($alo_lom == 1){
-        $tablaSintomas .='<th scope="col">Lomo:</th>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
+    $tablaSintomas .='<a href="#">Lomo</a>
+                    </li>
+                    <li>';
     if($alo_ext == 1){
-        $tablaSintomas .='<th scope="col">Extremidades:</th>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
+    $tablaSintomas .='<a href="#">Extremiadades</a>
+                    </li>
+                    <li>';
     if($alo_abdo == 1){
-        $tablaSintomas .='<th scope="col">Abdomen:</th>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='</tr>
-            </thead>
-            <tbody>
-            <tr>
-            ';
-    if($alo_cabe == 1){
-        $tablaSintomas .='<td>'.$alo_cabe.'</td>';
+    $tablaSintomas .='<a href="#">Abdomen</a>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                
+                <ul class="custom-list">
+                    <li>';
+    if($pust_peq == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
-    if($alo_ore == 1){
-        $tablaSintomas .='<td>'.$alo_ore.'</td>';
+    $tablaSintomas .='<a href="#">Pequeñas</a>
+                    </li>
+                    <li>';
+    if($pust_peq == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
-    if($alo_cue == 1){
-        $tablaSintomas .='<td>'.$alo_cue.'</td>';
-    }
-    if($alo_lom == 1){
-        $tablaSintomas .='<td>'.$alo_lom.'</td>';
-    }
-    if($alo_ext == 1){
-        $tablaSintomas .='<td>'.$alo_ext.'</td>';
-    }
-    if($alo_abdo == 1){
-        $tablaSintomas .='<td>'.$alo_abdo.'</td>';
-    }
+    $tablaSintomas .='<a href="#">Grandes</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
-    $tablaSintomas .='
-            </tr>
-            </tbody>';
-    
-
-    $tablaSintomas .='
-    <h3 class="section-title">Picazón</h3>
-    <ul class="custom-list">
-        <li>';
+    <table>
+        <thead>
+            <th> Picazón </th>
+            <th> Costras </th>
+            <th> Piel Gruesa </th>
+        </thead>
+    <tbody>
+        <tr>
+            <td>
+              
+              <ul class="custom-list">
+                  <li>';
     if($pica_lev == 1){
         $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox2">';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
-    
-    $tablaSintomas .='<a href="#">Leve:</a>
-        </li>
-        <li>';
+    $tablaSintomas .='<a>Leve</a>
+                  </li>
+                  <li>';
     if($pica_mod == 1){
         $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox2">';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Moderada:</a>
-        </li>
-        <li>';
+    $tablaSintomas .='<a href="#">Moderada</a>
+                  </li>
+                  <li>';
     if($pica_int == 1){
         $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox2">';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Intensa:</a>
-        </li>
-    </ul>';
+    $tablaSintomas .='<a href="#">Intensa</a>
+                  </li>
+              </ul>
+            </td>
+            <td>
+              
+              <ul class="custom-list">
+    <li>';
+    if($cost_peq == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='<a href="#">Pequeñas</a>
+                  </li>
+                  <li>';
+    if($cost_med == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='<a href="#">Medianas</a>
+                  </li>
+                  <li>';
+    if($cost_gran == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='<a href="#">Grandes</a>
+                  </li>
+              </ul>
+            </td>
+
+            <td>
+              
+              <ul class="custom-list">
+                  <li>';
+    if($pg_lv == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='<a href="#">Leve</a>
+                  </li>
+                  <li>';
+    if($pg_pron == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='<a href="#">Pronunciada</a>
+                  </li>
+                  <li>';
+    if($pg_gra == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='<a href="#">Grave</a>
+                  </li>
+              
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <th> Piel Enrojecida ';
+    if($enrojecimiento == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='</th>
+            <th> Mal Olor ';
+    if($mal_olor == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='</th>
+            <th> Eritema ';
+    if($eritema == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='</th>
+            <th> Sacudida de Cabeza ';
+    if($sacu_cabe == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='</th>
+            <th> Cerumen en el oido ';
+    if($cerum_oid == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+    }
+    $tablaSintomas .='</th>
+        </thead>
+        
+
+    </table>
+</div>';
+
+    
+    
+    
 
     // Convertir los datos a un formato PDF
     $pdf = new DOMPDF();
@@ -173,44 +325,82 @@ if ($result->num_rows > 0){
     <meta charset="UTF-8">
     <title>Ficha Dermatológica - Síntomas</title>
     <style>
+        /* Estilos generales y de secciones */
         body {
             font-family: Arial, sans-serif;
-            padding: 10px;
+            padding: 5px;
             background-color: #f8f9fa;
         }
+
         .header {
             text-align: center;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            border-bottom: 2px solid #4B81BB;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
         }
+
         .section {
             margin-bottom: 10px;
-            background-color: #ffffff;
-            padding: 10px;
+            padding: 5px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .section-title {
-            font-size: 1.5em;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #007bff;
+
+        /* Estilos para Datos de la Mascota */
+        .datos-mascota {
+            background-color: #DCEFFF; /* Color de fondo más claro */
+            border: 1px solid #b3e0d7; /* Borde en tono azul claro */
         }
+
+        /* Estilos para Síntomas Presentes */
+        .sintomas-presentes {
+            background-color: #DCEFFF; /* Color de fondo más oscuro */
+        }
+
+        .sintomas-presentes .section-title {
+            border-bottom: 2px solid #004080; /* Cambia el color del título a un azul oscuro */
+        }
+
+        /* Estilos para Diagnóstico */
+        .diagnostico {
+            background-color: #DCEFFF; /* Color de fondo neutro */
+        }
+
+        .diagnostico .section-title {
+            border-bottom: 2px solid #0B3E6A; /* Cambia el color del título a un verde oscuro */
+        }
+
+        /* Estilos generales para tablas y listas */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
+
         th, td {
             border: 1px solid #dee2e6;
-            padding: 8px 12px;
+            padding: 5px;
             text-align: left;
         }
+
         th {
             background-color: #007bff;
-            color: #ffffff;
+            color: #EEF5DB;
         }
+
+        .datos-mascota th {
+            background-color: #13293d;
+        }
+        .sintomas-presentes th {
+            background-color: #13293d;
+        }
+
+        .diagnostico th {
+            background-color: #13293d;
+        }
+
+
+
         tbody tr:nth-child(even) {
             background-color: #f8f9fa;
         }
@@ -218,40 +408,40 @@ if ($result->num_rows > 0){
         .custom-list {
             list-style-type: none;
             padding-left: 0;
-            margin-top: 20px;
-          }
-          
-          .custom-list li {
+            margin-top: 5px;
+        }
+
+        .custom-list li {
             display: flex;
             align-items: center;
-            padding: 10px 15px;
+            padding: 5px;
             margin-bottom: 5px;
             border: 1px solid #dee2e6;
             border-radius: 4px;
             background-color: #f8f9fa;
-          }
-          
-          .custom-list li:hover {
+        }
+
+        .custom-list li:hover {
             background-color: #e9ecef;
             border-color: #dae0e5;
-          }
-          
-          .custom-list li:last-child {
+        }
+
+        .custom-list li:last-child {
             margin-bottom: 0;
-          }
-          
-          .custom-list li input[type="checkbox"] {
-            margin-right: 10px;
-          }
-          
-          .custom-list li a {
+        }
+
+        .custom-list li input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .custom-list li a {
             text-decoration: none;
-            color: #007bff;
-          }
-          
-          .custom-list li a:hover {
+            color: #424C55;
+        }
+
+        .custom-list li a:hover {
             text-decoration: underline;
-          }
+        }
     </style>
 </head>
 <body>
@@ -259,8 +449,7 @@ if ($result->num_rows > 0){
     <div class="header">
         <h1>Ficha Dermatológica - Diagnóstico</h1>
     </div>
-
-    <div class="section">
+    <div class="section datos-mascota">
         <h2 class="section-title">Datos de la Mascota</h2>
         <table class="table">
             <thead>
@@ -275,31 +464,25 @@ if ($result->num_rows > 0){
                 <td>'.$nombre_pet.'</td>
                 <td>'.$edadMeses.'</td>
                 <td>'.$raz_pet.'</td>
-
             </tr>
             </tbody>
         </table>
     </div>
-
-    <div class="section">
-        <h2 class="section-title">Síntomas Presentes</h2>
-        '.$tablaSintomas.'
-    </div>
-
-    <div class="section">
+    '.$seccion_sintomas.'
+    <div class="section diagnostico">
         <h2 class="section-title">Diagnóstico</h2>
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Enfermedad:</th>
-                <th scope="col">Probabilidad:</th>
-                <th scope="col">Fecha análisis:</th>
+                <th scope="col">Enfermedad</th>
+                <th scope="col">Probabilidad</th>
+                <th scope="col">Fecha análisis</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>'.$enf_diag.'</td>
-                <td>'.$porcentaje_diag.'</td>
+                <td>'.$porcentaje_diag.'%</td>
                 <td>'.$fecha_fcder.'</td>
 
             </tr>
