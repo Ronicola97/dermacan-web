@@ -103,10 +103,9 @@ if ($result->num_rows > 0){
         
     </body>
     </html>';
-    $pdf->loadHtml($html);
 
     // Guardar el archivo PDF
-    $pdfData = $pdf->output("", "S");
+    $pdfData = $pdf->loadHtml($html);
 
     $storage = new StorageClient([
         'keyFilePath' => 'adept-portal-397013-1d8a23b30297.json', // Ruta a tu archivo de credenciales
@@ -149,4 +148,4 @@ if ($result->num_rows > 0){
 
 
 $conn->close();
-?>    
+?>
