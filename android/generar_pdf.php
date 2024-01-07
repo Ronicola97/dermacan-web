@@ -131,43 +131,38 @@ if ($result->num_rows > 0){
 
     $tablaSintomas .='
             </tr>
-            </tbody>
-        </table>
-        <h3 class="section-title">Picazón</h3>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Leve:</th>
-                <th scope="col">Moderada:</th>
-                <th scope="col">Intensa:</th>
-                
-            </tr>
-            </thead>
-            <tbody>
-            <tr>';
+            </tbody>';
+    
+
+    $tablaSintomas .='
+    <h3 class="section-title">Picazón</h3>
+    <ul class="custom-list">
+        <li>';
     if($pica_lev == 1){
-        $tablaSintomas .='<td><input type="radio" name="picazon" value="" checked></td>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<td><input type="radio" name="picazon" value=""></td>';
-    }
-
-    if($pica_mod == 1){
-        $tablaSintomas .='<td><input type="radio" name="picazon" value="" checked></td>';
-    }else{
-        $tablaSintomas .='<td><input type="radio" name="picazon" value=""></td>';
-    }
-
-    if($pica_int == 1){
-        $tablaSintomas .='<td><input type="radio" name="picazon" value="" checked></td>';
-    }else{
-        $tablaSintomas .='<td><input type="radio" name="picazon" value=""></td>';
+        $tablaSintomas .='<input type="checkbox" id="checkbox2">';
     }
     
-    $tablaSintomas .='            
-            </tr>
-            </tbody>
-        </table>
-    ';
+    $tablaSintomas .='<a href="#">Leve:</a>
+        </li>
+        <li>';
+    if($pica_mod == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox2">';
+    }
+    $tablaSintomas .='<a href="#">Moderada:</a>
+        </li>
+        <li>';
+    if($pica_int == 1){
+        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+    }else{
+        $tablaSintomas .='<input type="checkbox" id="checkbox2">';
+    }
+    $tablaSintomas .='<a href="#">Intensa:</a>
+        </li>
+    </ul>';
 
     // Convertir los datos a un formato PDF
     $pdf = new DOMPDF();
@@ -219,6 +214,44 @@ if ($result->num_rows > 0){
         tbody tr:nth-child(even) {
             background-color: #f8f9fa;
         }
+
+        .custom-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+          }
+          
+          .custom-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+          }
+          
+          .custom-list li:hover {
+            background-color: #e9ecef;
+            border-color: #dae0e5;
+          }
+          
+          .custom-list li:last-child {
+            margin-bottom: 0;
+          }
+          
+          .custom-list li input[type="checkbox"] {
+            margin-right: 10px;
+          }
+          
+          .custom-list li a {
+            text-decoration: none;
+            color: #007bff;
+          }
+          
+          .custom-list li a:hover {
+            text-decoration: underline;
+          }
     </style>
 </head>
 <body>
