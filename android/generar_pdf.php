@@ -79,35 +79,52 @@ if ($result->num_rows > 0){
     // Convertir los datos a un formato PDF
     $pdf = new DOMPDF();
     $html = '
-    <html lang="es">
+    <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Ficha Dermatológica - Síntomas</title>
-    <!-- Incluir Bootstrap CSS para mejorar el diseño -->
-    
-    <link rel="stylesheet" href="http://'.$_ENV["HOST_URL"].'/assets/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
         }
         .header {
             text-align: center;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid #007bff;
             padding-bottom: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .section-title {
             font-size: 1.5em;
-            
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
         }
-        .symptom {
-            margin-top: 15px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
         }
     </style>
 </head>
@@ -119,7 +136,6 @@ if ($result->num_rows > 0){
 
     <div class="section">
         <h2 class="section-title">Datos de la Mascota</h2>
-
         <table class="table">
             <thead>
             <tr>
@@ -141,36 +157,52 @@ if ($result->num_rows > 0){
 
     <div class="section">
         <h2 class="section-title">Síntomas Presentes</h2>
-
-        <div class="row">
-            <div class="col-md-4 section-title">
-                <strong>Alopecia</strong>
-            </div>
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Cabeza:</th>
-                    <th scope="col">Orejas:</th>
-                    <th scope="col">Cuello:</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>'.$alo_cabe.'</td>
-                    <td>'.$alo_ore.'</td>
-                    <td>'.$alo_cue.'</td>
-
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
-
+        <h3 class="section-title">Alopecia</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Cabeza:</th>
+                <th scope="col">Orejas:</th>
+                <th scope="col">Cuello:</th>
+                <th scope="col">Lomo:</th>
+                <th scope="col">Extremidades:</th>
+                <th scope="col">Abdomen:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>'.$alo_cabe.'</td>
+                <td>'.$alo_ore.'</td>
+                <td>'.$alo_cue.'</td>
+                <td>'.$alo_lom.'</td>
+                <td>'.$alo_ext.'</td>
+                <td>'.$alo_abdo.'</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3 class="section-title">Picazón</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Leve:</th>
+                <th scope="col">Moderada:</th>
+                <th scope="col">Intensa:</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>'.$pica_lev.'</td>
+                <td>'.$pica_mod .'</td>
+                <td>'.$pica_int.'</td>
+                
+            </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="section">
-        <h2 class="section-title">Diagnóstico </h2>
+        <h2 class="section-title">Diagnóstico</h2>
         <table class="table">
             <thead>
             <tr>
