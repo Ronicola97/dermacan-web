@@ -76,6 +76,84 @@ if ($result->num_rows > 0){
         
     }
 
+    $tablaSintomas = '';
+
+    if($alo_cabe == 1 || $alo_ore == 1 || $alo_cue == 1 || $alo_lom == 1 || $alo_ext == 1 || $alo_abdo == 1){
+        $tablaSintomas .='<h3 class="section-title">Alopecia</h3>';
+    }
+    $tablaSintomas .= '
+    
+        <table class="table">
+            <thead>
+            <tr>
+            ';
+    if($alo_cabe == 1){
+        $tablaSintomas .='<th scope="col">Cabeza:</th>';
+    }
+    if($alo_ore == 1){
+        $tablaSintomas .='<th scope="col">Orejas:</th>';
+    }
+    if($alo_cue == 1){
+        $tablaSintomas .='<th scope="col">Cuello:</th>';
+    }
+    if($alo_lom == 1){
+        $tablaSintomas .='<th scope="col">Lomo:</th>';
+    }
+    if($alo_ext == 1){
+        $tablaSintomas .='<th scope="col">Extremidades:</th>';
+    }
+    if($alo_abdo == 1){
+        $tablaSintomas .='<th scope="col">Abdomen:</th>';
+    }
+    $tablaSintomas .='</tr>
+            </thead>
+            <tbody>
+            <tr>
+            ';
+    if($alo_cabe == 1){
+        $tablaSintomas .='<td>'.$alo_cabe.'</td>';
+    }
+    if($alo_ore == 1){
+        $tablaSintomas .='<td>'.$alo_ore.'</td>';
+    }
+    if($alo_cue == 1){
+        $tablaSintomas .='<td>'.$alo_cue.'</td>';
+    }
+    if($alo_lom == 1){
+        $tablaSintomas .='<td>'.$alo_lom.'</td>';
+    }
+    if($alo_ext == 1){
+        $tablaSintomas .='<td>'.$alo_ext.'</td>';
+    }
+    if($alo_abdo == 1){
+        $tablaSintomas .='<td>'.$alo_abdo.'</td>';
+    }
+
+    $tablaSintomas .='
+            </tr>
+            </tbody>
+        </table>
+        <h3 class="section-title">Picazón</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Leve:</th>
+                <th scope="col">Moderada:</th>
+                <th scope="col">Intensa:</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>'.$pica_lev.'</td>
+                <td>'.$pica_mod .'</td>
+                <td>'.$pica_int.'</td>
+                
+            </tr>
+            </tbody>
+        </table>
+    ';
+
     // Convertir los datos a un formato PDF
     $pdf = new DOMPDF();
     $html = '
@@ -157,48 +235,7 @@ if ($result->num_rows > 0){
 
     <div class="section">
         <h2 class="section-title">Síntomas Presentes</h2>
-        <h3 class="section-title">Alopecia</h3>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Cabeza:</th>
-                <th scope="col">Orejas:</th>
-                <th scope="col">Cuello:</th>
-                <th scope="col">Lomo:</th>
-                <th scope="col">Extremidades:</th>
-                <th scope="col">Abdomen:</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>'.$alo_cabe.'</td>
-                <td>'.$alo_ore.'</td>
-                <td>'.$alo_cue.'</td>
-                <td>'.$alo_lom.'</td>
-                <td>'.$alo_ext.'</td>
-                <td>'.$alo_abdo.'</td>
-            </tr>
-            </tbody>
-        </table>
-        <h3 class="section-title">Picazón</h3>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Leve:</th>
-                <th scope="col">Moderada:</th>
-                <th scope="col">Intensa:</th>
-                
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>'.$pica_lev.'</td>
-                <td>'.$pica_mod .'</td>
-                <td>'.$pica_int.'</td>
-                
-            </tr>
-            </tbody>
-        </table>
+        '.$tablaSintomas.'
     </div>
 
     <div class="section">
