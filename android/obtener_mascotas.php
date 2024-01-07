@@ -16,22 +16,10 @@ if($no_filas>0){
         // Asumiendo que la columna 'url_imagen' almacena la URL de la imagen en GCS
         $imagen_url = $filas['ruta_imagen'];
 
-		//calculo edad
-        $fechaNacimiento = $row['fnaci_pet'];
+		$fechaNacimiento = $filas['fnaci_pet'];
         $fechaActual = date('Y-m-d');
-
-        // Convertir las fechas a objetos DateTime para un cálculo más preciso
-        $fechaNacimiento = new DateTime($fechaNacimiento);
-        $fechaActual = new DateTime($fechaActual);
-
-        // Calcular la diferencia entre las fechas
-        $diferencia = $fechaNacimiento->diff($fechaActual);
-
-        // Obtener la edad en años y meses restantes
-        $edadAnios = $diferencia->y; // años
-        $edadMesesRestantes = $diferencia->m;
-
-        $edad = $edadAnios."años ".$edadMesesRestantes." meses";
+		$diferencia = strtotime($fechaActual) - strtotime($fechaNacimiento);
+		$edadMeses = $diferencia / (30.5 * 86400);
 
 
         // Si deseas agregar más campos o modificar la estructura de los datos, puedes hacerlo aquí
@@ -39,7 +27,7 @@ if($no_filas>0){
             'id_pet' => $filas['id_pet'],
             'nombre_pet' => $filas['nombre_pet'],
             'direccion_pet' => $filas['direccion_pet'],
-            'fnaci_pet' => $edadAnios,
+            'fnaci_pet' => intval($edadMeses),
             'raz_pet' => $filas['raz_pet'],
             'cedula_usu' => $filas['cedula_usu'],
             'estado_pet' => $filas['estado_pet'],
