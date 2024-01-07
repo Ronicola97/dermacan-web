@@ -80,103 +80,117 @@ if ($result->num_rows > 0){
     $pdf = new DOMPDF();
     $html = '
     <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ficha Dermatológica - Síntomas</title>
-        <!-- Incluir Bootstrap CSS para mejorar el diseño -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                padding: 20px;
-            }
-            .header {
-                text-align: center;
-                border-bottom: 2px solid black;
-                padding-bottom: 10px;
-                margin-bottom: 30px;
-            }
-            .section {
-                margin-bottom: 30px;
-            }
-            .section-title {
-                font-size: 1.5em;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 5px;
-                margin-bottom: 20px;
-            }
-            .symptom {
-                margin-top: 15px;
-            }
-        </style>
-    </head>
-    <body>
-    <div class="container">
-        <div class="header">
-            <h1>Ficha Dermatológica - Diagnóstico</h1>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Datos de la Mascota</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <strong>Nombre:</strong> '.$nombre_pet.'
-                </div>
-                <div class="col-md-4">
-                    <strong>Edad:</strong> '.$edadMeses.'
-                </div>
-                <div class="col-md-4">
-                    <strong>Raza:</strong> '.$raz_pet.'
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Síntomas Presentes</h2>
-
-            <div class="row">
-                <div class="col-md-4 section-title">
-                    <strong>Alopecia</strong>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <strong>Cabeza:</strong> '.$alo_cabe.'
-                </div>
-                <div class="col-md-4">
-                    <strong>Orejas:</strong> '.$alo_ore.'
-                </div>
-
-                <div class="col-md-4">
-                    <strong>Cuello:</strong> '.$alo_cue.'
-                </div>
-
-            </div>
-
-            <!-- Puedes agregar más síntomas según sea necesario -->
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Diagnóstico </h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <strong>Enfermedad:</strong> '.$enf_diag.'
-                </div>
-                <div class="col-md-4">
-                    <strong>Probabilidad:</strong> '.$porcentaje_diag.'
-                </div>
-
-                <div class="col-md-4">
-                    <strong>Fecha análisis:</strong> '.$fecha_fcder.'
-                </div>
-
-            </div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha Dermatológica - Síntomas</title>
+    <!-- Incluir Bootstrap CSS para mejorar el diseño -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .symptom {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Ficha Dermatológica - Diagnóstico</h1>
     </div>
-    </body>
-    </html>';
+
+    <div class="section">
+        <h2 class="section-title">Datos de la Mascota</h2>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nombre:</th>
+                <th scope="col">Edad:</th>
+                <th scope="col">Raza:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>'.$nombre_pet.'</td>
+                <td>'.$edadMeses.'</td>
+                <td>'.$raz_pet.'</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Síntomas Presentes</h2>
+
+        <div class="row">
+            <div class="col-md-4 section-title">
+                <strong>Alopecia</strong>
+            </div>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Cabeza:</th>
+                    <th scope="col">Orejas:</th>
+                    <th scope="col">Cuello:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>'.$alo_cabe.'</td>
+                    <td>'.$alo_ore.'</td>
+                    <td>'.$alo_cue.'</td>
+
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Diagnóstico </h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Enfermedad:</th>
+                <th scope="col">Probabilidad:</th>
+                <th scope="col">Fecha análisis:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>'.$enf_diag.'</td>
+                <td>'.$porcentaje_diag.'</td>
+                <td>'.$fecha_fcder.'</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>';
 
     $objectName = $id_pet . '_' . $id_fcder . '_' . $id_diag . '_DOMPDF.pdf';
 
