@@ -100,19 +100,19 @@ if ($result->num_rows > 0){
                     </li>
                     <li>';
     if($alo_ore == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1">';
     }
     $seccion_sintomas .= '<a href="#">Orejas</a>
                     </li>
                     <li>';
     if($alo_cue == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Cuello</a>
+    $seccion_sintomas .= '<a href="#">Cuello</a>
                     </li>
                 </ul>
             </td>
@@ -120,27 +120,27 @@ if ($result->num_rows > 0){
                 <ul class="custom-list">
                     <li>';
     if($alo_lom == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Lomo</a>
+    $seccion_sintomas .= '<a href="#">Lomo</a>
                     </li>
                     <li>';
     if($alo_ext == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Extremiadades</a>
+    $seccion_sintomas .= '<a href="#">Extremiadades</a>
                     </li>
                     <li>';
     if($alo_abdo == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Abdomen</a>
+    $seccion_sintomas .= '<a href="#">Abdomen</a>
                     </li>
                 </ul>
             </td>
@@ -149,19 +149,19 @@ if ($result->num_rows > 0){
                 <ul class="custom-list">
                     <li>';
     if($pust_peq == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .= '<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Pequeñas</a>
+    $seccion_sintomas .='<a href="#">Pequeñas</a>
                     </li>
                     <li>';
     if($pust_peq == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Grandes</a>
+    $seccion_sintomas .='<a href="#">Grandes</a>
                     </li>
                 </ul>
             </td>
@@ -182,27 +182,27 @@ if ($result->num_rows > 0){
               <ul class="custom-list">
                   <li>';
     if($pica_lev == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a>Leve</a>
+    $seccion_sintomas .='<a>Leve</a>
                   </li>
                   <li>';
     if($pica_mod == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Moderada</a>
+    $seccion_sintomas .='<a href="#">Moderada</a>
                   </li>
                   <li>';
     if($pica_int == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Intensa</a>
+    $seccion_sintomas .='<a href="#">Intensa</a>
                   </li>
               </ul>
             </td>
@@ -211,27 +211,27 @@ if ($result->num_rows > 0){
               <ul class="custom-list">
     <li>';
     if($cost_peq == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Pequeñas</a>
+    $seccion_sintomas .='<a href="#">Pequeñas</a>
                   </li>
                   <li>';
     if($cost_med == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Medianas</a>
+    $seccion_sintomas .='<a href="#">Medianas</a>
                   </li>
                   <li>';
     if($cost_gran == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Grandes</a>
+    $seccion_sintomas .='<a href="#">Grandes</a>
                   </li>
               </ul>
             </td>
@@ -241,27 +241,27 @@ if ($result->num_rows > 0){
               <ul class="custom-list">
                   <li>';
     if($pg_lv == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Leve</a>
+    $seccion_sintomas .='<a href="#">Leve</a>
                   </li>
                   <li>';
     if($pg_pron == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Pronunciada</a>
+    $seccion_sintomas .='<a href="#">Pronunciada</a>
                   </li>
                   <li>';
     if($pg_gra == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='<a href="#">Grave</a>
+    $seccion_sintomas .='<a href="#">Grave</a>
                   </li>
               
             </td>
@@ -273,39 +273,39 @@ if ($result->num_rows > 0){
         <thead>
             <th> Piel Enrojecida ';
     if($enrojecimiento == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='</th>
+    $seccion_sintomas .='</th>
             <th> Mal Olor ';
     if($mal_olor == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='</th>
+    $seccion_sintomas .='</th>
             <th> Eritema ';
     if($eritema == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='</th>
+    $seccion_sintomas .='</th>
             <th> Sacudida de Cabeza ';
     if($sacu_cabe == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='</th>
+    $seccion_sintomas .='</th>
             <th> Cerumen en el oido ';
     if($cerum_oid == 1){
-        $tablaSintomas .='<input type="checkbox" id="checkbox1" checked>';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
-        $tablaSintomas .='<input type="checkbox" id="checkbox1">';
+        $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
     }
-    $tablaSintomas .='</th>
+    $seccion_sintomas .='</th>
         </thead>
         
 
