@@ -167,7 +167,7 @@ if ($result->num_rows > 0){
     $seccion_sintomas .='<a href="#">Pequeñas</a>
                     </li>
                     <li>';
-    if($pust_peq == 1){
+    if($pust_gran == 1){
         $seccion_sintomas .='<input type="checkbox" id="checkbox1" checked>';
     }else{
         $seccion_sintomas .='<input type="checkbox" id="checkbox1">';
