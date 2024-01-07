@@ -50,7 +50,7 @@ if ($result->num_rows > 0){
     ]);
     $bucketName = 'dermacan-storage';
 
-    //nombre del pdf
+    //nombre del
     $objectName = $id_pet . '_' . $id_fcder . '_' . $id_diag . '.pdf';
 
     $bucket = $storage->bucket($bucketName);
