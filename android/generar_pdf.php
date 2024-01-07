@@ -46,7 +46,7 @@ if ($result->num_rows > 0){
         $edadAnios = $diferencia->y; // años
         $edadMesesRestantes = $diferencia->m;
 
-        $edad = $edadAnios."años ".$edadMesesRestantes." meses";
+        $edad = $edadAnios." años ".$edadMesesRestantes." meses";
 
         //ficha dermatologica
         $fecha_fcder = $row['fecha_fcder'];

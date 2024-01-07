@@ -31,7 +31,7 @@ if($no_filas>0){
         $edadAnios = $diferencia->y; // años
         $edadMesesRestantes = $diferencia->m;
 
-        $edad = $edadAnios."años ".$edadMesesRestantes." meses";
+        $edad = $edadAnios." años ".$edadMesesRestantes." meses";
 
 
         // Si deseas agregar más campos o modificar la estructura de los datos, puedes hacerlo aquí
