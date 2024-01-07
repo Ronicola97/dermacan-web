@@ -22,21 +22,27 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
 
+    while ($row = $result->fetch_assoc()) {
+        $nombre_pet = $row['nombre_pet'];
+        $fecha_fcder = $row['fecha_fcder'];
+        $enf_diag = $row['enf_diag'];
+        
+    }
+
     // Crear instancia de FPDF
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial', 'B', 16);
 
     $pdf->Cell(0, 10, 'Historial Medico', 0, 1, 'C');
-
-    while ($row = $result->fetch_assoc()) {
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(0, 10, 'Nombre Mascota: ' . $row['nombre_pet'], 0, 1);
-        $pdf->Cell(0, 10, 'Fecha: ' . $row['fecha_fcder'], 0, 1);
-        $pdf->Cell(0, 10, 'Diagnóstico: ' . $row['enf_diag'], 0, 1);
-    }
+    $pdf->SetFont('Arial', '', 12);
+    $pdf->Cell(0, 10, 'Nombre Mascota: ' . $nombre_pet, 0, 1);
+    $pdf->Cell(0, 10, 'Fecha: ' . $fecha_fcder, 0, 1);
+    $pdf->Cell(0, 10, 'Diagnóstico: ' . $enf_diag, 0, 1);
 
     $pdfData = $pdf->Output("", "S");
+
+    //iniciar envio al servidor de google cloud
 
     $storage = new StorageClient([
         'keyFilePath' => 'adept-portal-397013-1d8a23b30297.json', // Ruta a tu archivo de credenciales
@@ -44,6 +50,7 @@ if ($result->num_rows > 0){
     ]);
     $bucketName = 'dermacan-storage';
 
+    //nombre del pdf
     $objectName = $id_pet . '_' . $id_fcder . '_' . $id_diag . '.pdf';
 
     $bucket = $storage->bucket($bucketName);
