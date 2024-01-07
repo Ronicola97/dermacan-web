@@ -84,7 +84,8 @@ if ($result->num_rows > 0){
     <meta charset="UTF-8">
     <title>Ficha Dermatológica - Síntomas</title>
     <!-- Incluir Bootstrap CSS para mejorar el diseño -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://'.$_ENV["HOST_URL"].'/assets/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
