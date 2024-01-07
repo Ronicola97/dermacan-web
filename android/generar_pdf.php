@@ -34,8 +34,19 @@ if ($result->num_rows > 0){
         //calculo edad
         $fechaNacimiento = $row['fnaci_pet'];
         $fechaActual = date('Y-m-d');
-		$diferencia = strtotime($fechaActual) - strtotime($fechaNacimiento);
-		$edadMeses = $diferencia / (30.5 * 86400);
+
+        // Convertir las fechas a objetos DateTime para un cálculo más preciso
+        $fechaNacimiento = new DateTime($fechaNacimiento);
+        $fechaActual = new DateTime($fechaActual);
+
+        // Calcular la diferencia entre las fechas
+        $diferencia = $fechaNacimiento->diff($fechaActual);
+
+        // Obtener la edad en años y meses restantes
+        $edadAnios = $diferencia->y; // años
+        $edadMesesRestantes = $diferencia->m;
+
+        $edad = $edadAnios."años ".$edadMesesRestantes." meses";
 
         //ficha dermatologica
         $fecha_fcder = $row['fecha_fcder'];
@@ -462,7 +473,7 @@ if ($result->num_rows > 0){
             <tbody>
             <tr>
                 <td>'.$nombre_pet.'</td>
-                <td>'.$edadMeses.'</td>
+                <td>'.$edad.'</td>
                 <td>'.$raz_pet.'</td>
             </tr>
             </tbody>
