@@ -106,7 +106,7 @@ if ($result->num_rows > 0){
     $pdf->loadHtml($html);
 
     // Guardar el archivo PDF
-    $pdfData = $pdf->render();
+    $pdfData = $pdf->output();
 
     $storage = new StorageClient([
         'keyFilePath' => 'adept-portal-397013-1d8a23b30297.json', // Ruta a tu archivo de credenciales
