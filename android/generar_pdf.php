@@ -40,34 +40,34 @@ if ($result->num_rows > 0){
         //ficha dermatologica
         $fecha_fcder = $row['fecha_fcder'];
 
-        $alo_cabe = $row['alo_cabeza'];
-        $alo_ore = $row['alo_orejas'];
-        $alo_cue = $row['alo_cuello'];
-        $alo_lom = $row['alo_lomo'];
-        $alo_ext = $row['alo_extremidades'];
-        $alo_abdo = $row['alo_abdomen'];
+        $alo_cabe = $row['alo_cabe'];
+        $alo_ore = $row['alo_ore'];
+        $alo_cue = $row['alo_cue'];
+        $alo_lom = $row['alo_lom'];
+        $alo_ext = $row['alo_ext'];
+        $alo_abdo = $row['alo_abdo'];
 
-        $pica_lev = $row['pica_leve'];
-        $pica_mod = $row['pica_mode'];
-        $pica_int = $row['pica_inte'];
+        $pica_lev = $row['pica_lev'];
+        $pica_mod = $row['pica_mod'];
+        $pica_int = $row['pica_int'];
 
         $enrojecimiento = $row['enrojecimiento'];
 
-        $cost_peq = $row['costra_peque'];
-        $cost_med = $row['costra_media'];
-        $cost_gran = $row['costra_grand'];
+        $cost_peq = $row['cost_peq'];
+        $cost_med = $row['cost_med'];
+        $cost_gran = $row['cost_gran'];
 
-        $pg_lv = $row['piel_gru_leve'];
-        $pg_pron = $row['piel_gru_pron'];
-        $pg_gra = $row['piel_gru_grav'];
+        $pg_lv = $row['pg_lv'];
+        $pg_pron = $row['pg_pron'];
+        $pg_gra = $row['pg_gra'];
 
-        $pust_peq = $row['pustula_peque'];
-        $pust_gran = $row['pustula_grand'];
+        $pust_peq = $row['pust_peq'];
+        $pust_gran = $row['pust_gran'];
 
         $mal_olor = $row['mal_olor'];
         $eritema = $row['eritema'];
-        $sacu_cabe = $row['sacudida_cabeza'];
-        $cerum_oid = $row['cerumen_oido'];
+        $sacu_cabe = $row['sacu_cabe'];
+        $cerum_oid = $row['cerum_oid'];
 
         //diagnostico
         $enf_diag = $row['enf_diag'];
