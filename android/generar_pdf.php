@@ -120,13 +120,13 @@ if ($result->num_rows > 0){
             <h2 class="section-title">Datos de la Mascota</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <strong>Nombre:</strong> $nombre_pet
+                    <strong>Nombre:</strong> '.$nombre_pet.'
                 </div>
                 <div class="col-md-4">
-                    <strong>Edad:</strong> $edadMeses
+                    <strong>Edad:</strong> '.$edadMeses.'
                 </div>
                 <div class="col-md-4">
-                    <strong>Raza:</strong> $raz_pet
+                    <strong>Raza:</strong> '.$raz_pet.'
                 </div>
             </div>
         </div>
@@ -143,14 +143,14 @@ if ($result->num_rows > 0){
 
             <div class="row">
                 <div class="col-md-4">
-                    <strong>Cabeza:</strong> $alo_cabe
+                    <strong>Cabeza:</strong> '.$alo_cabe.'
                 </div>
                 <div class="col-md-4">
-                    <strong>Orejas:</strong> $alo_ore
+                    <strong>Orejas:</strong> '.$alo_ore.'
                 </div>
 
                 <div class="col-md-4">
-                    <strong>Cuello:</strong> $alo_cue
+                    <strong>Cuello:</strong> '.$alo_cue.'
                 </div>
 
             </div>
@@ -162,14 +162,14 @@ if ($result->num_rows > 0){
             <h2 class="section-title">Diagnóstico </h2>
             <div class="row">
                 <div class="col-md-4">
-                    <strong>Enfermedad:</strong> $enf_diag
+                    <strong>Enfermedad:</strong> '.$enf_diag.'
                 </div>
                 <div class="col-md-4">
-                    <strong>Probabilidad:</strong> $porcentaje_diag
+                    <strong>Probabilidad:</strong> '.$porcentaje_diag.'
                 </div>
 
                 <div class="col-md-4">
-                    <strong>Fecha análisis:</strong> $fecha_fcder
+                    <strong>Fecha análisis:</strong> '.$fecha_fcder.'
                 </div>
 
             </div>
