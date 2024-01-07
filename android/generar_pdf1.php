@@ -38,17 +38,74 @@ if ($result->num_rows > 0){
     <head>
         <meta charset="UTF-8">
         <title>Ficha Dermatológica - Síntomas</title>
-        
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: left;
+                padding: 20px;
+            }
+            .header {
+                text-align: center;
+                border-bottom: 2px solid black;
+                padding-bottom: 10px;
+            }
+            h1 {
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+            .section {
+                margin-bottom: 30px;
+            }
+            .section-title {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 5px;
+            }
+            .symptom {
+                margin-top: 15px;
+            }
+        </style>
     </head>
     <body>
-        <div>
+        <div class="header">
             <h1>Ficha Dermatológica - Síntomas</h1>
         </div>
+        
+        <div class="section">
+            <h2 class="section-title">Datos Generales del Paciente</h2>
+            <p><strong>Nombre del Paciente:</strong> Nombre de tu mascota</p>
+            <p><strong>Edad:</strong> Edad de tu mascota</p>
+            <p><strong>Especie:</strong> Especie de tu mascota</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Síntomas Presentes</h2>
+            
+            <div class="symptom">
+                <strong>1. Tipo de Síntoma:</strong> Descripción o nombre del síntoma
+                <p>Detalles adicionales sobre el síntoma, como localización, duración, etc.</p>
+            </div>
+            
+            <div class="symptom">
+                <strong>2. Tipo de Síntoma:</strong> Descripción o nombre del síntoma
+                <p>Detalles adicionales sobre el síntoma, como localización, duración, etc.</p>
+            </div>
+            
+            <!-- Puedes agregar más síntomas según sea necesario -->
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Observaciones Adicionales</h2>
+            <p>Notas o comentarios adicionales sobre los síntomas observados.</p>
+        </div>
+        
     </body>
     </html>';
 
-    
-    
+    $objectName = $id_pet . '_' . $id_fcder . '_' . $id_diag . '_DOMPDF.pdf';
+
+    $pdf->load_html($html);
     $pdf->set_paper("a4", "portrait");
     $pdf->render();
     $pdfData = $pdf->output();
@@ -60,7 +117,7 @@ if ($result->num_rows > 0){
     $bucketName = 'dermacan-storage';
 
     //nombre del pdf
-    $objectName = $id_pet . '_' . $id_fcder . '_' . $id_diag . '_DOMPDF.pdf';
+    
 
     $bucket = $storage->bucket($bucketName);
 
