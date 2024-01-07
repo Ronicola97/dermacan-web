@@ -34,9 +34,7 @@ if ($result->num_rows > 0){
     // Convertir los datos a un formato PDF
     $pdf = new DOMPDF();
     $html = "<table><thead><tr><th>Nombre Mascota</th><th>Fecha Diagnostico</th><th>Diagnostico</th></tr></thead><tbody>";
-    foreach ($resultados as $registro) {
-        $html .= "<tr><td>$nombre_pet</td><td>$fecha_fcder</td><td>$enf_diag</td></tr>";
-    }
+    $html .= "<tr><td>$nombre_pet</td><td>$fecha_fcder</td><td>$enf_diag</td></tr>";
     $html .= "</tbody></table>";
     $pdf->loadHtml($html);
 
