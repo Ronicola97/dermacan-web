@@ -16,7 +16,7 @@ date_default_timezone_set("America/Guayaquil");
 
 $id_pet = $_POST['id_pet'];
 $id_fcder = $_POST['id_fcder'];
-$id_diag = $_POST['id_diag'];
+
 
 
 $sql = "select * 
@@ -34,6 +34,8 @@ if ($result->num_rows > 0){
         //mascota
         $nombre_pet = $row['nombre_pet'];
         $raz_pet = $row['raz_pet'];
+
+        $id_diag = $row['id_diag'];
 
         $ruta_imagen = $row['ruta_imagen'];
 

@@ -162,7 +162,24 @@ if($respuesta==true){
   $resp = curl_exec($curl);
   curl_close($curl);
 
-  echo $resp;
+  //echo $resp;
+
+  //decodificar el json de la api de machine learning
+  $respuesta_array = json_decode($resp, true);
+
+  if ($respuesta_array !== null) {
+    // Acceder a los datos decodificados
+    $prediccion = $respuesta_array['prediccion'];
+    $probabilidad = $respuesta_array['probabilidad'];
+    
+  }else {
+      // La decodificación falló
+      echo "error";
+  }
+
+  
+
+
 
   $consulta_idf = "SELECT id_fcder,id_mas FROM ficha_dermatologica where (id_mas ='$id_mas') order by id_fcder desc limit 1;";
 // Ejecutar la consulta
@@ -186,11 +203,32 @@ if($respuesta==true){
                 VALUES ('$probabilidad','$enfermedad', '$id_fcder', '$estado', '$verificado')";
         $respuesta = $conn->query($sentencia);
 
-        if ($respuesta == true) {
-            $verificado = 0;
-        } else {
-            echo 'Se ha producido un error';
-        }
+  if ($respuesta == true) {
+      $verificado = 0;
+  } else {
+      echo 'Se ha producido un error';
+  }
+
+  $array_enviar = array(
+    "prediccion" => $prediccion,
+    "probabilidad" => $probabilidad,
+    "id_fcder" => $id_fcder,
+    "id_pet" => $id_mas,
+  );
+
+  // Codificar el array asociativo a formato JSON
+  $json_enviar = json_encode($array_enviar);
+
+  // Verificar si la codificación fue exitosa
+  if ($json_enviar !== false) {
+      // Mostrar el JSON codificado
+      echo $json_datos;
+
+      // Puedes enviar este JSON como respuesta, guardar en una base de datos, etc.
+  } else {
+      // La codificación falló
+      echo "error";
+  }
 
 
 
