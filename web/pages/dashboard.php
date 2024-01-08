@@ -99,12 +99,12 @@ if(isset($_SESSION['cedula_usu'])==false){
                           where (fd.id_fcder = d.id_fcder and m.id_pet = fd.id_mas and u.cedula_usu = m.cedula_usu and fd.estado_fcder = 1)
                           group by u.cedula_usu ";
                           $result = mysqli_query($conn, $sql);
-                          while ($mostrar = mysqli_fetch_array($result)) ?>
+                          while ($mostrar = mysqli_fetch_array($result)){ ?>
                           <tr>
-                            <td><?php echo $mostrar['usuario'] ?></td>
-                            <td><?php echo $mostrar['cuantos_analisis'] ?></td>
+                            <td><?php echo $mostrar['usuario']; ?></td>
+                            <td><?php echo $mostrar['cuantos_analisis']; ?></td>
                           </tr>                    
-                          <?php ?>                      
+                          <?php }?>                      
                           </tr>
 
                         </tbody>
