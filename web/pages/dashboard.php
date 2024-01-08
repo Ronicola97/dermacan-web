@@ -101,7 +101,7 @@ if(isset($_SESSION['cedula_usu'])==false){
                           $result = mysqli_query($conn, $sql);
                           while ($mostrar = mysqli_fetch_array($result)) ?>
                           <tr>
-                            <td><?php echo $mostrar['nombre'] ?></td>
+                            <td><?php echo $mostrar['usuario'] ?></td>
                             <td><?php echo $mostrar['cuantos_analisis'] ?></td>
                           </tr>                    
                           <?php ?>                      
