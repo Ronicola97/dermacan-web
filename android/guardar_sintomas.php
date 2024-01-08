@@ -222,7 +222,7 @@ if($respuesta==true){
   // Verificar si la codificación fue exitosa
   if ($json_enviar !== false) {
       // Mostrar el JSON codificado
-      echo $json_datos;
+      echo $json_enviar;
 
       // Puedes enviar este JSON como respuesta, guardar en una base de datos, etc.
   } else {
