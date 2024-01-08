@@ -92,7 +92,7 @@ if(isset($_SESSION['cedula_usu'])==false){
                           <th>Usuario</th>
                           <th>#</th>
                         </thead>
-                        <tbody class="text-center">/*
+                        <tbody class="text-center">
                           <?php
                           $sql = "select CONCAT(u.nombre_usu,' ',u.apellido_usu) as usuario, count(u.nombre_usu) as cuantos_analisis
                           from ficha_dermatologica fd, diagnostico d, mascota m, usuario u
@@ -105,7 +105,7 @@ if(isset($_SESSION['cedula_usu'])==false){
                             <td><?php echo $mostrar['cuantos_analisis'] ?></td>
                           </tr>                    
                           <?php ?>                      
-                          </tr>*/
+                          </tr>
 
                         </tbody>
                         <tfoot class="bg-info ">
