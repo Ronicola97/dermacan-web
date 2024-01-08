@@ -7,7 +7,7 @@ $dueno = $_GET['cedula'];
 
 $arreglo = array();
 
-$sql = "select * from mascota where cedula_usu='$dueno'";
+$sql = "select * from mascota where cedula_usu='$dueno' order by id_pet desc";
 
 $respuesta = $conn->query($sql);
 $no_filas = $respuesta->num_rows;
