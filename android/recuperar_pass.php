@@ -53,10 +53,10 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Subir CSV</h2>      
+          <h2>Recuperar Contraseña</h2>      
         </div>       
         <div class="row">      
-            <h3 class="text-center">Escoja el archivo</h3>            
+            <h3 class="text-center">Ingrese su correo registrado</h3>            
             <hr>       
         </div>     
         <section id="gallery">
